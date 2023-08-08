@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&family=Hanken+Grotesk:wght@400;700;800&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-image: url(../assets/home/background-home-mobile.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+}
+
+#headerItems {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+img[alt=Logo], .burger-menu {
+  cursor: pointer;
+  padding: 10px;
+  z-index: 3;
+}
+
+.horizontalLine, #burgerMenu_toclose, header nav {
+  display: none;
+}
+
+.nav-index {
+  font-weight: bold;
+}
+
+nav {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.27em;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+#burgerList {
+  background-color: rgba(208, 214, 249, 0.0823529412);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  height: 100vh;
+  list-style: none;
+  padding: 20px;
+  width: 75vw;
+}
+#burgerList li {
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 15px;
+  position: relative;
+  top: 108px;
+  width: fit-content;
+}
+#burgerList li .nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+}
+#burgerList li .nav-link::before {
+  content: "";
+  height: 0px;
+  transform-style: flat;
+  transform: translate3d(-50%, -50%, 0);
+  width: 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+#burgerList li .nav-link:focus {
+  /*Thanks to @thelaazyguy:
+  https://codepen.io/twhite96/embed/YgJGMX?height=600&default-tab=result&embed-version=2#css-box*/
+}
+#burgerList li .nav-link:focus::before {
+  animation: activeAnimation 0.5s alternate 2;
+}
+
+.appear {
+  display: block;
+}
+
+@keyframes activeAnimation {
+  100% {
+    background-color: rgba(255, 255, 255, 0.377);
+    border-radius: 100%;
+    height: 300px;
+    width: 300px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,103 @@
+@use './variables.scss';
+@use './config/reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&family=Hanken+Grotesk:wght@400;700;800&display=swap');
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-image: variables.$homebgMobile;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    max-width: 1440px;
+    width: 100%;
+}
+
+#headerItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+img[alt="Logo"], .burger-menu{
+    cursor: pointer;
+    padding: 10px;
+    z-index: 3;
+}
+
+.horizontalLine, #burgerMenu_toclose, header nav{
+    display: none;
+}
+
+.nav-index{
+    font-weight: bold;
+}
+
+nav{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.27em;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#burgerList{
+    background-color: #d0d6f915;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    height: 100vh;
+    list-style: none;
+    padding: 20px;
+    width: 75vw;
+    li{
+        border-radius: 3px;
+        overflow: hidden;
+        padding: 15px;
+        position: relative;
+        top: 108px;
+        width: fit-content;
+        .nav-link{
+            color: variables.$secondaryColor;
+            text-decoration: none;
+            padding: 15px;
+            &::before{
+                content: "";
+                height: 0px;
+                transform-style: flat;
+                transform: translate3d(-50%, -50% , 0);
+                width: 0px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+            }
+            &:focus{
+                /*Thanks to @thelaazyguy:
+                https://codepen.io/twhite96/embed/YgJGMX?height=600&default-tab=result&embed-version=2#css-box*/
+                &::before{
+                    animation: activeAnimation 0.5s alternate 2;
+                }
+            }
+        }
+    }
+}
+
+.appear{
+    display: block;
+}
+
+@keyframes activeAnimation{
+    100%{
+        background-color: rgba(255, 255, 255, 0.377);
+        border-radius: 100%;
+        height: 300px;
+        width: 300px;
+    }
+}
