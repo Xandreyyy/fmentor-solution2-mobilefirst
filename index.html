@@ -5,45 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&family=Hanken+Grotesk:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./build/style.css"/>
-  <script src="./build/js/index.js" defer></script>
+  <script src="./src/components/header.js"></script>
 
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body>
-  <header class="container">
-    <div id="headerItems">
-      <img src="./assets/shared/logo.svg" alt="Logo"/>
-      <span id="horizontalLine"></span>
-      <img class="burger-menu" id="burgerMenu_toopen" src="./assets/shared/icon-hamburger.svg"/>
-      <img class="burger-menu" id="burgerMenu_toclose" src="./assets/shared/icon-close.svg"/>
-    </div>
-    <nav>
-      <ul id="burgerList">
-        <li><a class="nav-link" href="./index.html"><span class="nav-index">00</span> HOME</a></li>
-        <li><a class="nav-link" href="#"><span class="nav-index">01</span> DESTINATION</a></li>
-        <li><a class="nav-link" href="#"><span class="nav-index">02</span> CREW</a></li>
-        <li><a class="nav-link" href="#"><span class="nav-index">03</span> TECHNOLOGY</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- <header class="container">
-    <div id="headerItems">
-      <img src="./assets/shared/logo.svg" alt="Logo"/>
-      <span id="horizontalLine"></span>
-      <img class="burger-menu" id="burgerMenu_toopen" src="./assets/shared/icon-hamburger.svg"/>
-      <img class="burger-menu" id="burgerMenu_toclose" src="./assets/shared/icon-close.svg"/>
-    </div>
-    <nav>
-      <ul id="burgerList">
-        <li><a class="nav-link" href="./index.html"><span class="nav-index">00</span> HOME</a></li>
-        <li><a class="nav-link" href="#"><span class="nav-index">01</span> DESTINATION</a></li>
-        <li><a class="nav-link" href="#"><span class="nav-index">02</span> CREW</a></li>
-        <li><a class="nav-link" href="#"><span class="nav-index">03</span> TECHNOLOGY</a></li>
-      </ul>
-    </nav>
-  </header> -->
+  <custom-header></custom-header>
 
   <!-- So, you want to travel to
   Space

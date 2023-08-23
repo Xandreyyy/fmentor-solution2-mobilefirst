@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../src/config/reset.scss","../src/crew.scss","../src/config/variables.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;;;ACAJ;EACI;;;AAGJ;EACI,kBCRW;EDSX;EACA;;;AAGJ;EACI;IACI,kBCdO;IDeP;IACA;;;AAIR;EACI;IACI,kBCrBQ;IDsBR;IACA","file":"crewStyle.css"}
