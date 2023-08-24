@@ -5,9 +5,9 @@ header{
     /*using this ↓ because "translateX(100%)"*/
     overflow: hidden;
     nav{
-        font-family: 'Barlow Condensed', sans-serif;
+        font-family: variables.$secondaryFF;
         font-size: 1.6rem;
-        letter-spacing: 0.27em;
+        letter-spacing: 0.27rem;
         &.offcanvas{
             position: fixed;
             top: 0px;
@@ -50,7 +50,7 @@ img[alt="Logo"], .burger-menu{
 }
 
 #burgerList{
-    background-color: #d0d6f915;
+    background-color: variables.$tertiaryColor;
     backdrop-filter: blur(20px);
     display: flex;
     flex-direction: column;

@@ -11,6 +11,73 @@ body{
     background-repeat: no-repeat;
 }
 
+.container{
+    margin: 0px auto;
+    max-width: 1440px;
+    width: 100%;
+}
+
+.primary-title{
+    color: variables.$secondaryColor;
+    font-family: variables.$primaryFF;
+    font-size: 12rem;
+    font-weight: normal;
+}
+
+.secondary-title{
+    color: variables.$primaryColor; 
+    font-family: variables.$secondaryFF;
+    font-size: 2.2rem;
+    font-weight: normal;
+    letter-spacing: 0.475rem;
+}
+
+.p-text{
+    color: variables.$primaryColor; 
+    font-family: variables.$secondaryFF;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+}
+
+main{
+    display: grid;
+    row-gap: 80px;
+    grid-template-columns: 100%;
+    text-align: center;
+    padding: 35px;
+}
+
+.inner-container h1{
+    padding: 25px 0px;
+}
+
+.container-button{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 215px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+#exploreButton{
+    background-color: variables.$secondaryColor;
+    border-radius: 100%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46%;
+    height: 75%;
+}
+
+#exploreButton h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-weight: lighter;
+    letter-spacing: 0.475rem;
+}
+
 @media screen and (min-width: 600px){
     body{
         background-image: variables.$homebgTablet;
