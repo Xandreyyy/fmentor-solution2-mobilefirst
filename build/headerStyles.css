@@ -12,7 +12,8 @@ header {
 header nav {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.6rem;
-  letter-spacing: 0.27em;
+  letter-spacing: 0.27rem;
+  z-index: 2;
 }
 header nav.offcanvas {
   position: fixed;
@@ -54,7 +55,7 @@ img[alt=Logo]:active, .burger-menu:active {
 }
 
 #burgerList {
-  background-color: rgba(208, 214, 249, 0.0823529412);
+  background-color: rgba(151, 151, 151, 0.1);
   backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
@@ -194,7 +195,7 @@ img[alt=Logo]:active, .burger-menu:active {
   #burgerList::before {
     content: "";
     display: block;
-    background-color: gray;
+    background-color: #979797;
     height: 1px;
     width: 56%;
     position: relative;

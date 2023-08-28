@@ -9,55 +9,60 @@ body{
     background-image: variables.$homebgMobile;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .container{
     margin: 0px auto;
     max-width: 1440px;
+    padding: 0rem 2.4rem;
     width: 100%;
 }
 
 .primary-title{
     color: variables.$secondaryColor;
+    display: inline-block;
     font-family: variables.$primaryFF;
-    font-size: 12rem;
+    font-size: 8rem;
     font-weight: normal;
+    padding: 1.6rem 0rem;
 }
 
 .secondary-title{
     color: variables.$primaryColor; 
     font-family: variables.$secondaryFF;
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     font-weight: normal;
-    letter-spacing: 0.475rem;
+    letter-spacing: 0.27em;
 }
 
 .p-text{
     color: variables.$primaryColor; 
     font-family: variables.$secondaryFF;
-    font-size: 1.8rem;
-    line-height: 3.2rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    text-align: center;
 }
 
 main{
     display: grid;
-    row-gap: 80px;
+    row-gap: 8.1rem;
     grid-template-columns: 100%;
     text-align: center;
-    padding: 35px;
-}
-
-.inner-container h1{
-    padding: 25px 0px;
 }
 
 .container-button{
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 215px;
+    align-self: flex-end;
     align-items: center;
     justify-content: center;
     justify-items: center;
+    a{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 #exploreButton{
@@ -67,15 +72,32 @@ main{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 46%;
-    height: 75%;
-}
-
-#exploreButton h2{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 2em;
-    font-weight: lighter;
-    letter-spacing: 0.475rem;
+    height: 70%;
+    position: relative;
+    width: 40%;
+    z-index: 1;
+    h2{
+        color: initial;
+        font-family: variables.$primaryFF;
+        font-size: 2em;
+        font-weight: lighter;
+        letter-spacing: 0.125em;
+    }
+    &::before{
+        background-color: rgba(variables.$secondaryColor, 0.3);
+        border-radius: inherit;
+        content: "";
+        height: 100%;
+        opacity: 1;
+        position: absolute;
+        transition: 0.3s ease-out;
+        width: 100%;
+        z-index: -1;
+    }
+    &:hover::before{
+        opacity: 1;
+        transform: scale(1.8);
+    }
 }
 
 @media screen and (min-width: 600px){

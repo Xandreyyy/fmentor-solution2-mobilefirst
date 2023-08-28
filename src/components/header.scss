@@ -8,6 +8,7 @@ header{
         font-family: variables.$secondaryFF;
         font-size: 1.6rem;
         letter-spacing: 0.27rem;
+        z-index: 2;
         &.offcanvas{
             position: fixed;
             top: 0px;
@@ -50,7 +51,7 @@ img[alt="Logo"], .burger-menu{
 }
 
 #burgerList{
-    background-color: variables.$tertiaryColor;
+    background-color: rgba(variables.$tertiaryColor, 0.1);
     backdrop-filter: blur(20px);
     display: flex;
     flex-direction: column;
