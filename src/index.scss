@@ -7,7 +7,7 @@ html{
 
 body{
     background-image: variables.$homebgMobile;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     display: grid;
     grid-template-rows: min-content 100%;
