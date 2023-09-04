@@ -7,12 +7,12 @@ html{
 
 body{
     background-image: variables.$homebgMobile;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     display: grid;
     grid-template-rows: min-content 100%;
     row-gap: 2rem;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 .container{
@@ -57,7 +57,7 @@ body{
 main{
     display: grid;
     grid-template-columns: 100%;
-    row-gap: clamp(16rem, 9rem, 10rem);
+    grid-template-rows: 100%;
     text-align: center;
 }
 

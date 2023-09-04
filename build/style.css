@@ -60,7 +60,7 @@ body {
 main {
   display: grid;
   grid-template-columns: 100%;
-  row-gap: 16rem;
+  grid-template-rows: 100%;
   text-align: center;
 }
 
