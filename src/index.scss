@@ -1,7 +1,7 @@
 @use '../src/config/variables.scss';
 @use '../src/config/reset.scss';
 
-html{
+:root{
     font-size: 62.5%;
 }
 
@@ -10,7 +10,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-rows: min-content 100%;
+    grid-template-rows: auto 100%;
     row-gap: 2rem;
     min-height: 100vh;
 }
@@ -114,7 +114,6 @@ a{
         background-repeat: no-repeat;
     }
     main{
-        align-items: center;
         grid-template-columns: repeat(2, 50%);
         place-items: center;
         .inner-container{
