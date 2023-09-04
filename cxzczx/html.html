@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{margin: 0px;padding: 0px;box-sizing: border-box;}
+        body{
+            min-height: 100vh;
+        }
+
+        .grid-container{
+            /* border: 2px pink solid; */
+            display: grid;
+            justify-items: center;
+        }
+        /*-------------------------------*/
+        .el{
+            aspect-ratio: 1;
+            width: 240px;
+        }
+        .quadrado{
+            background-color: orange;
+        }
+        .circulo{
+            background-color: red;
+            border-radius: 100%;
+        }
+
+        @media screen and (min-width: 900px) {
+            .grid-container{
+                grid-template-columns: minmax(0, 1fr) repeat(2, minmax(240px, 480px)) minmax(0, 1fr);
+            }
+            .quadrado{
+                grid-column: 2;
+            }
+            .circulo{
+                grid-column: 3;
+            }
+        }
+    </style>
+    <div class="grid-container">
+        <div class="el quadrado"></div>
+        <div class="el circulo"></div>
+    </div>
+</body>
+</html>

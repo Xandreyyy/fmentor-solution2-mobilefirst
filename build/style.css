@@ -12,7 +12,10 @@ body {
   background-image: url(../assets/home/background-home-mobile.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: hidden;
+  display: grid;
+  grid-template-rows: min-content 100%;
+  row-gap: 2rem;
+  min-height: 100vh;
 }
 
 .container {
@@ -22,72 +25,68 @@ body {
   width: 100%;
 }
 
+.inner-container .secondary-title {
+  display: flex;
+  flex-direction: column;
+}
+
 .primary-title {
   color: white;
   display: inline-block;
   font-family: "Bellefair", sans-serif;
-  font-size: 8rem;
+  font-size: clamp(7rem, 13vw, 13rem);
   font-weight: normal;
-  padding: 1.6rem 0rem;
+  padding: 0.2em 0rem;
 }
 
 .secondary-title {
   color: #D0D6F9;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 1.6rem;
+  font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: normal;
   letter-spacing: 0.27em;
 }
 
 .p-text {
+  margin: 0px auto;
   color: #D0D6F9;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 2vw, 1.6rem);
   line-height: 2.5rem;
-  text-align: center;
+  max-width: 450px;
+  width: 100%;
 }
 
 main {
   display: grid;
-  row-gap: 8.1rem;
   grid-template-columns: 100%;
+  row-gap: 16rem;
   text-align: center;
 }
 
-.container-button {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 215px;
-  align-self: flex-end;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
+a {
+  text-decoration: none;
 }
-.container-button a {
-  width: 100%;
-  height: 100%;
-}
-
-#exploreButton {
+a #exploreButton {
+  aspect-ratio: 1;
   background-color: white;
   border-radius: 100%;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 70%;
+  padding: 0em 2.8em;
   position: relative;
-  width: 40%;
   z-index: 1;
 }
-#exploreButton h2 {
-  color: initial;
+a #exploreButton #buttonTitle {
+  color: #0B0D17;
   font-family: "Bellefair", sans-serif;
-  font-size: 2em;
+  font-size: clamp(2rem, 2.8vw, 3.2rem);
   font-weight: lighter;
   letter-spacing: 0.125em;
 }
-#exploreButton::before {
+a #exploreButton::before {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: inherit;
   content: "";
@@ -98,7 +97,7 @@ main {
   width: 100%;
   z-index: -1;
 }
-#exploreButton:hover::before {
+a #exploreButton:hover::before {
   opacity: 1;
   transform: scale(1.8);
 }
@@ -115,6 +114,18 @@ main {
     background-image: url(../assets/home/background-home-desktop.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+  }
+  main {
+    align-items: center;
+    grid-template-columns: repeat(2, 50%);
+    place-items: center;
+  }
+  main .inner-container .secondary-title {
+    text-align: start;
+  }
+  main .inner-container .p-text {
+    text-align: justify;
+    width: 100%;
   }
 }
 

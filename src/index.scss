@@ -9,7 +9,10 @@ body{
     background-image: variables.$homebgMobile;
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: hidden;
+    display: grid;
+    grid-template-rows: min-content 100%;
+    row-gap: 2rem;
+    min-height: 100vh;
 }
 
 .container{
@@ -19,84 +22,80 @@ body{
     width: 100%;
 }
 
+.inner-container .secondary-title{
+    display: flex;
+    flex-direction: column;
+}
+
 .primary-title{
     color: variables.$secondaryColor;
     display: inline-block;
     font-family: variables.$primaryFF;
-    font-size: 8rem;
+    font-size: clamp(7rem, 13vw, 13rem);
     font-weight: normal;
-    padding: 1.6rem 0rem;
+    padding: 0.2em 0rem;
 }
 
 .secondary-title{
     color: variables.$primaryColor; 
     font-family: variables.$secondaryFF;
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 2vw, 2rem);
     font-weight: normal;
     letter-spacing: 0.27em;
 }
 
 .p-text{
+    margin: 0px auto;
     color: variables.$primaryColor; 
     font-family: variables.$secondaryFF;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 2vw, 1.6rem);
     line-height: 2.5rem;
-    text-align: center;
+    max-width: 450px;
+    width: 100%;
 }
 
 main{
     display: grid;
-    row-gap: 8.1rem;
     grid-template-columns: 100%;
+    row-gap: clamp(16rem, 9rem, 10rem);
     text-align: center;
 }
 
-.container-button{
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 215px;
-    align-self: flex-end;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    a{
-        width: 100%;
-        height: 100%;
-    }
-}
-
-#exploreButton{
-    background-color: variables.$secondaryColor;
-    border-radius: 100%;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 70%;
-    position: relative;
-    width: 40%;
-    z-index: 1;
-    h2{
-        color: initial;
-        font-family: variables.$primaryFF;
-        font-size: 2em;
-        font-weight: lighter;
-        letter-spacing: 0.125em;
-    }
-    &::before{
-        background-color: rgba(variables.$secondaryColor, 0.3);
-        border-radius: inherit;
-        content: "";
-        height: 100%;
-        opacity: 1;
-        position: absolute;
-        transition: 0.3s ease-out;
-        width: 100%;
-        z-index: -1;
-    }
-    &:hover::before{
-        opacity: 1;
-        transform: scale(1.8);
+a{
+    text-decoration: none;
+    #exploreButton{
+        aspect-ratio: 1;
+        background-color: variables.$secondaryColor;
+        border-radius: 100%;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0em 2.8em;
+        position: relative;
+        z-index: 1;
+        #buttonTitle{
+            color: #0B0D17;
+            font-family: variables.$primaryFF;
+            font-size: clamp(2rem, 2.8vw, 3.2rem);
+            font-weight: lighter;
+            letter-spacing: 0.125em;
+        }
+        &::before{
+            background-color: rgba(variables.$secondaryColor, 0.3);
+            border-radius: inherit;
+            content: "";
+            height: 100%;
+            opacity: 1;
+            position: absolute;
+            transition: 0.3s ease-out;
+            width: 100%;
+            z-index: -1;
+        }
+        &:hover::before{
+            opacity: 1;
+            transform: scale(1.8);
+        }
     }
 }
 
@@ -113,5 +112,19 @@ main{
         background-image: variables.$homebgDesktop;
         background-size: cover;
         background-repeat: no-repeat;
+    }
+    main{
+        align-items: center;
+        grid-template-columns: repeat(2, 50%);
+        place-items: center;
+        .inner-container{
+            .secondary-title{
+                text-align: start;
+            }
+            .p-text{
+                text-align: justify;
+                width: 100%;
+            }
+        }
     }
 }
