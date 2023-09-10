@@ -13,9 +13,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
-  grid-template-rows: auto 100%;
+  grid-template-rows: min-content 100%;
+  min-height: 100svh;
   row-gap: 2rem;
-  min-height: 100vh;
+  overflow: hidden;
 }
 
 .container {
@@ -59,15 +60,16 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 100%;
+  grid-template-rows: repeat(auto, 0);
   text-align: center;
 }
 
-a {
-  text-decoration: none;
+.container-button {
+  display: flex;
+  align-items: end;
+  justify-content: center;
 }
-a #exploreButton {
+.container-button #exploreButton {
   aspect-ratio: 1;
   background-color: white;
   border-radius: 100%;
@@ -79,14 +81,14 @@ a #exploreButton {
   position: relative;
   z-index: 1;
 }
-a #exploreButton #buttonTitle {
+.container-button #exploreButton #buttonTitle {
   color: #0B0D17;
   font-family: "Bellefair", sans-serif;
   font-size: clamp(2rem, 2.8vw, 3.2rem);
   font-weight: lighter;
   letter-spacing: 0.125em;
 }
-a #exploreButton::before {
+.container-button #exploreButton::before {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: inherit;
   content: "";
@@ -97,7 +99,7 @@ a #exploreButton::before {
   width: 100%;
   z-index: -1;
 }
-a #exploreButton:hover::before {
+.container-button #exploreButton:hover::before {
   opacity: 1;
   transform: scale(1.8);
 }
@@ -117,6 +119,7 @@ a #exploreButton:hover::before {
   }
   main {
     grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 100%;
     place-items: center;
   }
   main .inner-container .secondary-title {
@@ -125,6 +128,12 @@ a #exploreButton:hover::before {
   main .inner-container .p-text {
     text-align: justify;
     width: 100%;
+  }
+  main .container-button {
+    display: flex;
+    justify-content: end;
+    height: 70%;
+    width: 70%;
   }
 }
 
