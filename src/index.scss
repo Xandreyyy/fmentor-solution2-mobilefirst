@@ -10,8 +10,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
-    grid-template-rows: min-content 100%;
-    min-height: 100svh;
+    grid-template-rows: min-content 75vh;
     row-gap: 2rem;
     overflow: hidden;
 }
@@ -64,7 +63,6 @@ main{
 .container-button{
     display: grid;
     align-items: end;
-    width: 100%;
     #exploreButton{
         aspect-ratio: 1;
         background-color: variables.$secondaryColor;
@@ -117,24 +115,16 @@ main{
     }
     main{
         grid-template-columns: repeat(2, 50%);
-        justify-items: center;
-        .inner-container{
-            place-self: center;
-            .secondary-title{
-                text-align: start;
-            }
-            .p-text{
-                text-align: justify;
-                width: 100%;
-            }
+        place-items: center;
+        .secondary-title{
+            text-align: start;
+        }
+        .p-text{
+            text-align: justify;
+            width: 100%;
         }
     }
-    /*kms*/
     .container-button{
-        justify-items: center;
-        transform: translateY(-15%);
-        #exploreButton{
-            transform: translateX(50%);
-        }
+        align-items: initial;
     }
 }

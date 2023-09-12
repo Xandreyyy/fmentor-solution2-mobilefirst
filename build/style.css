@@ -13,8 +13,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   display: grid;
-  grid-template-rows: min-content 100%;
-  min-height: 100svh;
+  grid-template-rows: min-content 75vh;
   row-gap: 2rem;
   overflow: hidden;
 }
@@ -67,7 +66,6 @@ main {
 .container-button {
   display: grid;
   align-items: end;
-  width: 100%;
 }
 .container-button #exploreButton {
   aspect-ratio: 1;
@@ -119,25 +117,17 @@ main {
   }
   main {
     grid-template-columns: repeat(2, 50%);
-    justify-items: center;
+    place-items: center;
   }
-  main .inner-container {
-    place-self: center;
-  }
-  main .inner-container .secondary-title {
+  main .secondary-title {
     text-align: start;
   }
-  main .inner-container .p-text {
+  main .p-text {
     text-align: justify;
     width: 100%;
   }
-  /*kms*/
   .container-button {
-    justify-items: center;
-    transform: translateY(-15%);
-  }
-  .container-button #exploreButton {
-    transform: translateX(50%);
+    align-items: initial;
   }
 }
 
