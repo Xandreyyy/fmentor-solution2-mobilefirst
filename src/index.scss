@@ -8,7 +8,6 @@
 body{
     background-image: variables.$homebgMobile;
     background-size: cover;
-    background-repeat: no-repeat;
     display: grid;
     grid-template-rows: min-content 75vh;
     row-gap: 2rem;
@@ -31,7 +30,7 @@ body{
     color: variables.$secondaryColor;
     display: inline-block;
     font-family: variables.$primaryFF;
-    font-size: clamp(7rem, 13vw, 13rem);
+    font-size: clamp(7rem, 13vw, 12rem);
     font-weight: normal;
     padding: 0.2em 0rem;
 }
@@ -56,11 +55,22 @@ body{
 
 main{
     display: grid;
+    align-items: center;
     text-align: center;
 }
 
-.container-button{
+.inner-container{
     display: grid;
+    place-items: center;
+}
+
+#wrapper{
+    display: grid;
+    gap: 10rem;
+}
+
+.container-button{
+    align-self: end;
     #exploreButton{
         aspect-ratio: 1;
         background-color: variables.$secondaryColor;
@@ -69,13 +79,13 @@ main{
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 0em 2.8em;
+        padding: 0em 5em;
         position: relative;
         z-index: 1;
         #buttonTitle{
             color: #0B0D17;
             font-family: variables.$primaryFF;
-            font-size: clamp(2rem, 2.8vw, 3.2rem);
+            font-size: clamp(1.8rem, 2.7vw, 2.2rem);
             font-weight: lighter;
             letter-spacing: 0.125em;
         }
@@ -111,9 +121,8 @@ main{
         background-size: cover;
         background-repeat: no-repeat;
     }
-    main{
+    #wrapper{
         grid-template-columns: repeat(2, 50%);
-        place-items: center;
         .secondary-title{
             text-align: start;
         }
@@ -121,8 +130,5 @@ main{
             text-align: justify;
             width: 100%;
         }
-    }
-    .container-button{
-        width: 100%;
     }
 }

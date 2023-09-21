@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             const header = document.createElement('header')
             header.classList.add("container")
             header.innerHTML = `
-            <div id="headerItems">
+            <div id="iconsWrapper">
                 <a href="../index.html"><img src="../assets/shared/logo.svg" alt="Logo"/></a>
                 <img class="burger-menu" id="burgerMenu_toopen" src="../assets/shared/icon-hamburger.svg"/>
                 <img class="burger-menu" id="burgerMenu_toclose" src="../assets/shared/icon-close.svg"/>
@@ -107,12 +107,15 @@ document.addEventListener("DOMContentLoaded", () =>{
         applyNavBorder(isMobile = checkWidth()){
             const liElements = this.shadowRoot.querySelectorAll("#burgerList li")
             const currentURL = window.location.href
+            const homeURL = currentURL.slice(22)
 
             if(!isMobile){
                 liElements.forEach(el => {
                     let hrefChild = el.querySelector("a").href
                     if(currentURL === hrefChild && window.innerWidth >= 992){
                         el.classList.add("active")
+                    }else if(homeURL === ""){
+                        liElements[0].classList.add("active")
                     }else{
                         el.classList.remove("active")
                     }

@@ -1,26 +1,22 @@
 @use '../config/variables.scss';
 @use '../config/reset.scss';
 
-header{
-    /*using this ↓ because "translateX(100%)"*/
-    overflow: hidden;
-    nav{
-        font-family: variables.$secondaryFF;
-        font-size: 1.6rem;
-        letter-spacing: 0.27rem;
-        z-index: 2;
-        &.offcanvas{
-            position: fixed;
-            top: 0px;
-            right: 0px;
-            transform: translateX(100%);
-        }
-        &.appear{
-            animation: burgerOpen 1s forwards;
-        }
-        &.disappear{
-            animation: burgerClosed 0.5s backwards;
-        }
+nav{
+    font-family: variables.$secondaryFF;
+    font-size: 1.6rem;
+    letter-spacing: 0.27rem;
+    z-index: 2;
+    &.offcanvas{
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        transform: translateX(100%);
+    }
+    &.appear{
+        animation: burgerOpen 1s forwards;
+    }
+    &.disappear{
+        animation: burgerClosed 0.5s backwards;
     }
 }
 
@@ -30,7 +26,7 @@ header{
     width: 100%;
 }
 
-#headerItems{
+#iconsWrapper{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -77,6 +73,8 @@ img[alt="Logo"], .burger-menu{
             &::before{
                 content: "";
                 height: 0px;
+                /*thanks to @thelaazyguy:
+                https://codepen.io/twhite96/embed/YgJGMX?height=600&default-tab=result&embed-version=2#css-box*/
                 transform-style: flat;
                 transform: translate3d(-50%, -50% , 0);
                 width: 0px;
@@ -86,8 +84,6 @@ img[alt="Logo"], .burger-menu{
             }
             &:focus{
                 &::before{
-                    /*thanks to @thelaazyguy:
-                    https://codepen.io/twhite96/embed/YgJGMX?height=600&default-tab=result&embed-version=2#css-box*/
                     animation: focusAnimation 0.5s alternate 2;
                 }
             }
@@ -95,7 +91,7 @@ img[alt="Logo"], .burger-menu{
     }
 }
 
-.horizontalLine, #burgerMenu_toclose{
+#burgerMenu_toclose{
     display: none;
 }
 
@@ -185,6 +181,22 @@ img[alt="Logo"], .burger-menu{
 @media screen and (min-width: 992px) {
     header{
         padding: 4rem 0px 0px 5.5rem;
+        &::before{
+            content: "";
+            display: block;
+            background-color: variables.$secondaryColor;
+            position: relative;
+            top: 44.5px;
+            left: 2%;
+            width: 100%;
+            height: 1px;
+            order: 1;
+            z-index: 2;
+        }
+    }
+    nav{
+        z-index: 0;
+        order: 2;
     }
     #burgerList{
         padding: 0px 16.5rem 0px 12.3rem;
@@ -194,17 +206,6 @@ img[alt="Logo"], .burger-menu{
             .nav-index{
                 display: block;
             }
-        }
-        &::before{
-            content: "";
-            display: block;
-            background-color: variables.$tertiaryColor;
-            height: 1px;
-            width: 56%;
-            position: relative;
-            left: -50%;
-            top: 50%;
-            z-index: 1;
         }
     }
 }
