@@ -5,20 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="../build/destinationStyle.css">
   <script defer src="../src/components/header.js"></script>
+  <script defer src="../js/destination.js"></script>
+  <link rel="stylesheet" href="../build/destinationStyle.css">
 
   <title>Frontend Mentor | Space tourism website</title>
 </head>
 <body>
-  <style>
-    body{
-      background-color: #ccc;
-    }
-  </style>
   <custom-header></custom-header>
+  <div class="container">
+    <h2 class="secondary-title"><span class="tertiary-title">01 </span>PICK YOUR DESTINATION</h2>
+    <main>
+      <div class="about-planet">
+        <img id="planet" src="../assets/destination/image-moon.png" alt="Space star">
+      </div>
+      <section class="planet-section">
+        <nav>
+          <ul class="planets-menu">
+            <li class="menu-item secondary-title">MOON</li>
+            <li class="menu-item secondary-title">MARS</li>
+            <li class="menu-item secondary-title">EUROPA</li>
+            <li class="menu-item secondary-title">TITAN</li>
+          </ul>
+        </nav>
+        <section class="planet-summary">
+          <h1 class="primary-title big-title">MOON</h1>
+          <p class="p-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque possimus illo deleniti
+            iusto vitae delectus, natus rem laudantium laboriosam blanditiis! Aliquam quam provident est
+            perferendis laborum repellendus quaerat deleniti!
+          </p>
+        </section>
+        <section class="planet-info">
+          <div>
+            <h3 class="secondary-title">AVG. DISTANCE</h3>
+            <p class="primary-title med-title">999,999 KM</p>
+          </div>
+          <div>
+            <h3 class="secondary-title">EST. TRAVEL TIME</h3>
+            <p class="primary-title med-title">3 DAYS</p>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
 
-  01 Pick your destination
+
+  <!-- 01 Pick your destination
 
   Moon
   Mars
@@ -35,6 +68,6 @@
   225 mil. km
 
   Est. travel time
-  9 months
+  9 months -->
 </body>
 </html>
