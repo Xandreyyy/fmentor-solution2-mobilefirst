@@ -164,7 +164,7 @@ img[alt="Logo"], .burger-menu{
                 position: absolute;
                 top: 96.5%;
                 transition: 0.3s;
-                width: calc(100% - 3rem);
+                width: calc(100% - 2.8rem);
             }
             &:hover{
                 &::after{
@@ -181,6 +181,7 @@ img[alt="Logo"], .burger-menu{
 @media screen and (min-width: 992px) {
     header{
         padding: 4rem 0px 0px 5.5rem;
+        //Kevin Powell's solution, very helpful
         &::before{
             content: "";
             display: block;

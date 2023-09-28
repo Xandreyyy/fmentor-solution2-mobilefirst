@@ -170,7 +170,7 @@ img[alt=Logo]:active, .burger-menu:active {
     position: absolute;
     top: 96.5%;
     transition: 0.3s;
-    width: calc(100% - 3rem);
+    width: calc(100% - 2.8rem);
   }
   #burgerList li:hover::after {
     opacity: 1;

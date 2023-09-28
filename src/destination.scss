@@ -9,7 +9,6 @@ body{
     background-image: variables.$destinationbgMobile;
     background-size: cover;
     display: grid;
-    grid-template-rows: min-content 100%;
     row-gap: 2rem;
 }
 
@@ -66,6 +65,7 @@ body{
     }
     p{
         padding: 0.5em;
+        text-transform: uppercase;
     }
 }
 
@@ -105,7 +105,7 @@ div.container{
 main{
     display: grid;
     text-align: center;
-    #planet{
+    #planetImg{
         max-width: 20rem;
         place-self: center;
     }
@@ -116,6 +116,7 @@ main{
     padding-bottom: 2em;
     h1{
         padding: 0.1em 0em;
+        text-transform: uppercase;
     }
 }
 
@@ -134,7 +135,7 @@ main{
             grid-column: 2;
         }
     }
-    #planet{
+    #planetImg{
         max-width: 2rem;
     }
     .planet-info{
@@ -160,11 +161,12 @@ main{
         padding: 0em 0em 2em 0em;
     }
     main{
-        grid-template-columns: minmax(2em, 1fr)  minmax(0%, 56%) minmax(0%, 44%) minmax(2em, 1fr);
+        //the third column isn't equal to the second because it's need to be smaller, so the <p> height is consistent
+        grid-template-columns: minmax(2em, 1fr)  minmax(0%, 56%) minmax(0%, 42%) minmax(2em, 1fr);
         .about-planet{
             grid-column: 2;
             align-self: center;
-            #planet{
+            #planetImg{
                 max-width: 32rem;
             }
         }
@@ -182,7 +184,7 @@ main{
         }
     }
     .planet-info{
-        column-gap: 10%;
+        column-gap: 15%;
         justify-content: initial;
         h3, p{
             text-align: start;

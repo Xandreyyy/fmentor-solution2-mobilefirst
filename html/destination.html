@@ -17,20 +17,20 @@
     <h2 class="secondary-title"><span class="tertiary-title">01 </span>PICK YOUR DESTINATION</h2>
     <main>
       <div class="about-planet">
-        <img id="planet" src="../assets/destination/image-moon.png" alt="Space star">
+        <img id="planetImg" src="../assets/destination/image-moon.png" alt="Space star">
       </div>
       <section class="planet-section">
         <nav>
           <ul class="planets-menu">
-            <li class="menu-item secondary-title">MOON</li>
-            <li class="menu-item secondary-title">MARS</li>
-            <li class="menu-item secondary-title">EUROPA</li>
-            <li class="menu-item secondary-title">TITAN</li>
+            <li class="menu-item secondary-title" data-planet="Moon">MOON</li>
+            <li class="menu-item secondary-title" data-planet="Mars">MARS</li>
+            <li class="menu-item secondary-title" data-planet="Europa">EUROPA</li>
+            <li class="menu-item secondary-title" data-planet="Titan">TITAN</li>
           </ul>
         </nav>
         <section class="planet-summary">
-          <h1 class="primary-title big-title">MOON</h1>
-          <p class="p-text">
+          <h1 class="primary-title big-title" id="planetName">MOON</h1>
+          <p class="p-text" id="planetDesc">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis atque possimus illo deleniti
             iusto vitae delectus, natus rem laudantium laboriosam blanditiis! Aliquam quam provident est
             perferendis laborum repellendus quaerat deleniti!
@@ -39,35 +39,15 @@
         <section class="planet-info">
           <div>
             <h3 class="secondary-title">AVG. DISTANCE</h3>
-            <p class="primary-title med-title">999,999 KM</p>
+            <p class="primary-title med-title" id="avgDistance">999,999 KM</p>
           </div>
           <div>
             <h3 class="secondary-title">EST. TRAVEL TIME</h3>
-            <p class="primary-title med-title">3 DAYS</p>
+            <p class="primary-title med-title" id="travelTime">3 DAYS</p>
           </div>
         </section>
       </section>
     </main>
   </div>
-
-
-  <!-- 01 Pick your destination
-
-  Moon
-  Mars
-  Europa
-  Titan
-
-  Mars
-
-  Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
-  the tallest planetary mountain in our solar system. It’s two and a half times 
-  the size of Everest!
-
-  Avg. distance
-  225 mil. km
-
-  Est. travel time
-  9 months -->
 </body>
 </html>
