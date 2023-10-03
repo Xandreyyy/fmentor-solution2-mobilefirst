@@ -79,13 +79,13 @@ main{
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: 0em 5em;
+        padding: 3em;
         position: relative;
         z-index: 1;
         #buttonTitle{
             color: #0B0D17;
             font-family: variables.$primaryFF;
-            font-size: clamp(1.8rem, 2.7vw, 2.2rem);
+            font-size: clamp(1.5rem, 2.7vw, 2.2rem);
             font-weight: lighter;
             letter-spacing: 0.125em;
         }

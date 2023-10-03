@@ -43,7 +43,7 @@ body {
   letter-spacing: 0.27em;
 }
 
-.tertiary-title {
+.index-text {
   color: #979797;
   font-family: "Barlow Condensed", sans-serif;
   font-size: clamp(1.4rem, 2vw, 2rem);

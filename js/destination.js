@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 fetch("../data.json")
     .then(response => {
-        response.json()
+        return response.json()
     .then(jsonFile =>{
         return jsonFile.destinations
     })
@@ -31,13 +31,13 @@ fetch("../data.json")
                 travel: el.travel
             }
         })
-        return arrDestinations
     })
 })
 
 liElements.forEach(el => {
     el.addEventListener("click", ()=>{
         let dataValue = el.dataset.planet
+
         arrDestinations.forEach(obj => {
           if(obj.name === dataValue){
             displayHTML(obj.name, obj.bg, obj.desc, obj.distance, obj.travel)

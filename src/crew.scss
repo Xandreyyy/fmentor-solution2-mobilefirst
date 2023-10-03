@@ -6,23 +6,214 @@ html{
 }
 
 body{
-    background-image: variables.$homebgMobile;
+    background-image: variables.$destinationbgMobile;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    row-gap: 2rem;
+}
+
+.container{
+    margin: 0px auto;
+    max-width: 1440px;
+    padding: 0rem 2.4rem;
+    width: 100%;
+}
+
+.primary-title{
+    color: variables.$secondaryColor;
+    font-family: variables.$primaryFF;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: normal;
+}
+
+.secondary-title{
+    color: variables.$primaryColor; 
+    font-family: variables.$secondaryFF;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: normal;
+    letter-spacing: 0.27em;
+}
+
+.tertiary-title{
+    color: variables.$tertiaryColor;
+    font-family: variables.$primaryFF;
+    font-size: clamp(1.6rem, 2vw, 3rem);
+    font-weight: lighter;
+}
+
+.index-text{
+    color: variables.$tertiaryColor;
+    font-family: variables.$secondaryFF;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: bold;
+    letter-spacing: 0.27em;
+}
+
+.big-title{
+    font-size: clamp(3rem, 4vw, 6rem);
+}
+
+.p-text{
+    color: variables.$primaryColor; 
+    font-family: variables.$secondaryFF;
+    font-size: clamp(1.5rem, 2vw, 1.6rem);
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+div.container{
+    display: grid;
+    grid-template-columns: minmax(0em, 3em) 1fr minmax(0em, 3em);
+    grid-template-rows: min-content 1fr;
+    row-gap: 4em;
+}
+
+div.container h2{
+    text-align: center;
+    color: variables.$secondaryColor;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+main{
+    display: grid;
+    grid-row: 2;
+    grid-column: 2;
+    .crew-section{
+        order: 2;
+    }
+    .inner-crew{
+        display: grid;
+        nav{
+            order: 1;
+            margin: 3rem 0rem;
+        }
+        .crew-summary{
+            order: 2;
+        }
+    }
+    .about-crew{
+        display: grid;
+        border-bottom: 1px variables.$secondaryColor solid;
+        order: 1;
+        #crewImg{
+            justify-self: center;
+            align-self: flex-end;
+            max-width: 60%;
+        }
+    }
+}
+
+.crew-summary{
+    padding-bottom: 2em;
+    text-align: center;
+    h1{
+        padding: 0.2em 0em;
+        text-transform: uppercase;
+    }
+}
+
+nav .crew-menu{
+    display: flex;
+    justify-content: center;
+    column-gap: 2em;
+    list-style: none;
+    .menu-item{
+        aspect-ratio: 1;
+        background-color: rgba(variables.$tertiaryColor, 0.5);
+        border: none;
+        border-radius: 100%;
+        cursor: pointer;
+        padding: 0.5rem;
+        transition: 0.2s;
+        &:hover{
+            background-color: variables.$tertiaryColor;
+        }
+        &.active{
+            background-color: variables.$secondaryColor;
+        }
+    }
 }
 
 @media screen and (min-width: 600px){
     body{
-        background-image: variables.$homebgTablet;
+        background-image: variables.$destinationbgTablet;
         background-size: cover;
         background-repeat: no-repeat;
+    }
+    main{
+        grid-template-columns: minmax(0%, 1fr) minmax(0%, 80%) minmax(0%, 1fr);
+        row-gap: 2em;
+        .crew-section{
+            order: 1;
+            grid-column: 2;
+            nav{
+                margin: 0rem;;
+                margin-top: 3rem;
+                order: 2;
+            }
+        }
+        .about-crew{
+            border-bottom: none;
+            grid-column: 2;
+        }
+    }
+    div.container h2{
+        text-align: start;
+    }
+    .crew-summary{
+        padding-bottom: 2em;
+        text-align: center;
+        .p-text{
+            max-width: 100%;
+        }
     }
 }
 
 @media screen and (min-width: 992px) {
     body{
-        background-image: variables.$homebgDesktop;
+        background-image: variables.$destinationbgDesktop;
         background-size: cover;
         background-repeat: no-repeat;
+    }
+    div.container{
+        row-gap: 0em;
+    }
+
+    main{
+        grid-template-columns: minmax(min-content, 60%) minmax(min-content, 40%);
+        .crew-section{
+            display: grid;
+            align-items: center;
+            grid-column: 1;
+        }
+        .about-crew{
+            align-self: self-end;
+            justify-content: start;
+            grid-column: 2;
+            #crewImg{
+                justify-self: start;
+                align-self: flex-end;
+                width: 70%;
+            }
+        }
+    }
+    nav{
+        justify-self: start;
+        align-self: start;
+    }
+    .crew-summary{
+        max-width: 86%;
+        h1, h3{
+            text-align: initial;
+        }
+        .p-text{
+            max-width: 70%;
+            text-align: start;
+        }
     }
 }
