@@ -4,7 +4,7 @@ const commanderItem = document.querySelectorAll(".crew-menu .menu-item")[0]
 const crewRole = document.getElementById("crewRole")
 const crewName = document.getElementById("crewName")
 const crewDesc = document.getElementById("crewDesc")
-const crewBg = document.getElementById("crewImg").src
+const crewBg = document.getElementById("crewImg")
 
 let activeElement, arrMembers
 
@@ -52,5 +52,5 @@ function injectInHTML(role, name, desc, bg) {
     crewRole.innerText = `${role}`
     crewName.innerText = `${name}`
     crewDesc.innerText = `${desc}`
-    crewBg.innerText = `${bg}`
+    crewBg.src = `${bg}`
 }
