@@ -13,7 +13,7 @@ body{
     min-height: 100vh;
     display: grid;
     grid-template-rows: min-content 1fr;
-    row-gap: 2rem;
+    // row-gap: 2rem;
 }
 
 .container{
@@ -67,7 +67,7 @@ body{
 
 div.container{
     display: grid;
-    grid-template-columns: minmax(0em, 3em) 1fr minmax(0em, 3em);
+    grid-template-columns: minmax(0rem, 90rem) 100% minmax(0rem, 90rem);
     grid-template-rows: min-content 1fr;
     row-gap: 4em;
 }
@@ -97,13 +97,13 @@ main{
         }
     }
     .about-crew{
-        display: grid;
+        display: flex;
+        justify-content: center;
+        align-self: flex-end;
         border-bottom: 1px variables.$secondaryColor solid;
         order: 1;
         #crewImg{
-            justify-self: center;
-            align-self: flex-end;
-            max-width: 60%;
+            width: 65%;
         }
     }
 }
@@ -114,6 +114,9 @@ main{
     h1{
         padding: 0.2em 0em;
         text-transform: uppercase;
+    }
+    h3{
+        text-transform: uppercase; 
     }
 }
 
@@ -186,20 +189,18 @@ nav .crew-menu{
 
     main{
         grid-template-columns: minmax(min-content, 60%) minmax(min-content, 40%);
+        align-self: flex-start;
+        grid-row: 2;
         .crew-section{
-            display: grid;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             grid-column: 1;
         }
         .about-crew{
-            align-self: self-end;
-            justify-content: start;
             grid-column: 2;
-            #crewImg{
-                justify-self: start;
-                align-self: flex-end;
-                width: 70%;
-            }
+            justify-content: start;
+            align-self: self-start;
         }
     }
     nav{
@@ -207,7 +208,6 @@ nav .crew-menu{
         align-self: start;
     }
     .crew-summary{
-        max-width: 86%;
         h1, h3{
             text-align: initial;
         }
