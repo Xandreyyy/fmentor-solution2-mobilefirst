@@ -6,23 +6,212 @@ html{
 }
 
 body{
-    background-image: variables.$homebgMobile;
+    background-image: variables.$destinationbgMobile;
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 100%;
+    row-gap: 2rem;
+}
+
+.container{
+    margin-inline: auto;
+    max-width: 1440px;
+    padding: 0rem 2.4rem;
+    display: grid;
+    grid-template-columns: minmax(5rem, 1fr) minmax(0, 100%) minmax(5rem, 1fr);
+    grid-template-rows: min-content 100%;
+    overflow-y: hidden;
+}
+
+.primary-title{
+    color: variables.$secondaryColor;
+    font-family: variables.$primaryFF;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: normal;
+}
+
+.secondary-title{
+    color: variables.$primaryColor; 
+    font-family: variables.$secondaryFF;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: normal;
+    letter-spacing: 0.27em;
+}
+
+.tertiary-title{
+    color: variables.$tertiaryColor;
+    font-family: variables.$primaryFF;
+    font-size: clamp(1.6rem, 2vw, 3rem);
+    font-weight: lighter;
+}
+
+.index-text{
+    color: variables.$tertiaryColor;
+    font-family: variables.$secondaryFF;
+    font-size: clamp(1.4rem, 2vw, 2rem);
+    font-weight: bold;
+    letter-spacing: 0.27em;
+}
+
+.big-title{
+    font-size: clamp(3rem, 4vw, 6rem);
+}
+
+.p-text{
+    color: variables.$primaryColor; 
+    font-family: variables.$secondaryFF;
+    font-size: clamp(1.5rem, 2vw, 1.6rem);
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+
+div.container h2{
+    text-align: center;
+    color: variables.$secondaryColor;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+main{
+    display: grid;
+    grid-row: 2;
+    grid-column: 2;
+    .crew-section{
+        order: 2;
+    }
+    nav{
+        order: 1;
+        margin: 3rem 0rem;
+    }
+    .crew-summary{
+        order: 2;
+    }
+    .about-crew{
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px variables.$secondaryColor solid;
+        order: 1;
+        #crewImg{
+            aspect-ratio: 3/4;
+            max-width: 70%;
+        }
+    }
+}
+
+.crew-summary{
+    padding-bottom: 2em;
+    text-align: center;
+    h1{
+        padding: 0.2em 0em;
+        text-transform: uppercase;
+    }
+    h3{
+        text-transform: uppercase; 
+    }
+}
+
+nav .crew-menu{
+    display: flex;
+    justify-content: center;
+    column-gap: 2em;
+    list-style: none;
+    .menu-item{
+        aspect-ratio: 1;
+        background-color: transparent;
+        border: 1px solid variables.$secondaryColor;
+        border-radius: 100%;
+        color: variables.$secondaryColor;
+        cursor: pointer;
+        font-family: variables.$primaryFF;
+        font-size: 1.8rem;
+        padding: 4rem;
+        transition: 0.2s;
+        &:hover{
+            background-color: variables.$tertiaryColor;
+        }
+        &.active{
+            background-color: variables.$secondaryColor;
+        }
+    }
 }
 
 @media screen and (min-width: 600px){
     body{
-        background-image: variables.$homebgTablet;
+        background-image: variables.$destinationbgTablet;
         background-size: cover;
         background-repeat: no-repeat;
+    }
+    main{
+        grid-template-columns: minmax(5rem, 1fr) minmax(0, 80%) minmax(5rem, 1fr);
+        row-gap: 4em;
+        .crew-section{
+            order: 1;
+            grid-column: 2;
+            nav{
+                margin: 0rem;;
+                margin-top: 3rem;
+                order: 2;
+            }
+        }
+        .about-crew{
+            border-bottom: none;
+            grid-column: 2;
+        }
+    }
+    div.container h2{
+        text-align: start;
+    }
+    .crew-summary{
+        padding-bottom: 2em;
+        text-align: center;
+        .p-text{
+            max-width: 100%;
+        }
     }
 }
 
 @media screen and (min-width: 992px) {
     body{
-        background-image: variables.$homebgDesktop;
+        background-image: variables.$destinationbgDesktop;
         background-size: cover;
         background-repeat: no-repeat;
+    }
+    div.container{
+        row-gap: 0em;
+    }
+
+    main{
+        grid-template-columns: minmax(0%, 55%) minmax(0%, 45%);
+        grid-row: 2;
+        .crew-section{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            grid-column: 1;
+            row-gap: 4rem;
+        }
+        .about-crew{
+            grid-column: 2;
+            justify-content: start;
+            #crewImg{
+                aspect-ratio: 7/5;
+            }
+        }
+    }
+    nav{
+        justify-self: start;
+        align-self: start;
+    }
+    .crew-summary{
+        h1, h3{
+            text-align: initial;
+        }
+        .p-text{
+            max-width: 70%;
+            text-align: start;
+        }
     }
 }

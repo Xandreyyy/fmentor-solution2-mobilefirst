@@ -9,18 +9,20 @@ body{
     background-image: variables.$destinationbgMobile;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
     min-height: 100vh;
     display: grid;
-    grid-template-rows: min-content 1fr;
-    // row-gap: 2rem;
+    grid-template-rows: min-content 100%;
+    row-gap: 2rem;
 }
 
 .container{
-    margin: 0px auto;
+    margin-inline: auto;
     max-width: 1440px;
     padding: 0rem 2.4rem;
-    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(5rem, 1fr) minmax(0, 100%) minmax(5rem, 1fr);
+    grid-template-rows: min-content 100%;
+    overflow-y: hidden;
 }
 
 .primary-title{
@@ -65,12 +67,6 @@ body{
     text-align: center;
 }
 
-div.container{
-    display: grid;
-    grid-template-columns: minmax(0rem, 90rem) 100% minmax(0rem, 90rem);
-    grid-template-rows: min-content 1fr;
-    row-gap: 4em;
-}
 
 div.container h2{
     text-align: center;
@@ -86,24 +82,21 @@ main{
     .crew-section{
         order: 2;
     }
-    .inner-crew{
-        display: grid;
-        nav{
-            order: 1;
-            margin: 3rem 0rem;
-        }
-        .crew-summary{
-            order: 2;
-        }
+    nav{
+        order: 1;
+        margin: 3rem 0rem;
+    }
+    .crew-summary{
+        order: 2;
     }
     .about-crew{
         display: flex;
         justify-content: center;
-        align-self: flex-end;
         border-bottom: 1px variables.$secondaryColor solid;
         order: 1;
         #crewImg{
-            width: 65%;
+            aspect-ratio: 3/4;
+            max-width: 70%;
         }
     }
 }
@@ -126,7 +119,6 @@ nav .crew-menu{
     column-gap: 2em;
     list-style: none;
     .menu-item{
-        aspect-ratio: 1;
         background-color: rgba(variables.$tertiaryColor, 0.5);
         border: none;
         border-radius: 100%;
@@ -149,8 +141,8 @@ nav .crew-menu{
         background-repeat: no-repeat;
     }
     main{
-        grid-template-columns: minmax(0%, 1fr) minmax(0%, 80%) minmax(0%, 1fr);
-        row-gap: 2em;
+        grid-template-columns: minmax(5rem, 1fr) minmax(0, 80%) minmax(5rem, 1fr);
+        row-gap: 4em;
         .crew-section{
             order: 1;
             grid-column: 2;
@@ -188,19 +180,21 @@ nav .crew-menu{
     }
 
     main{
-        grid-template-columns: minmax(min-content, 60%) minmax(min-content, 40%);
-        align-self: flex-start;
+        grid-template-columns: minmax(0%, 55%) minmax(0%, 45%);
         grid-row: 2;
         .crew-section{
             display: flex;
             flex-direction: column;
             justify-content: center;
             grid-column: 1;
+            row-gap: 4rem;
         }
         .about-crew{
             grid-column: 2;
             justify-content: start;
-            align-self: self-start;
+            #crewImg{
+                aspect-ratio: 7/5;
+            }
         }
     }
     nav{
