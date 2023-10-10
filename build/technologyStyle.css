@@ -27,9 +27,8 @@ body {
 .container {
   margin-inline: auto;
   max-width: 1440px;
-  padding: 0rem 2.4rem;
   display: grid;
-  grid-template-columns: minmax(5rem, 1fr) minmax(0, 100%) minmax(5rem, 1fr);
+  grid-template-columns: minmax(8rem, 1fr) minmax(0, 100%) minmax(8rem, 1fr);
   grid-template-rows: min-content 100%;
   overflow-y: hidden;
 }
@@ -86,64 +85,68 @@ div.container h2 {
 main {
   display: grid;
   grid-row: 2;
-  grid-column: 2;
+  grid-column: span 4;
 }
-main .crew-section {
+main .tech-section {
   order: 2;
 }
 main nav {
   order: 1;
   margin: 3rem 0rem;
 }
-main .crew-summary {
+main .tech-summary {
   order: 2;
 }
-main .about-crew {
+main .tech-summary #techRole {
+  font-size: clamp(1.4rem, 1.3vw, 1.8rem);
+}
+main .about-tech {
   display: flex;
   justify-content: center;
   border-bottom: 1px white solid;
   order: 1;
 }
-main .about-crew #crewImg {
-  aspect-ratio: 3/4;
-  max-width: 70%;
+main .about-tech #techImg {
+  aspect-ratio: 1;
+  max-width: 100%;
 }
 
-.crew-summary {
+.tech-summary {
   padding-bottom: 2em;
   text-align: center;
 }
-.crew-summary h1 {
+.tech-summary h1 {
   padding: 0.2em 0em;
   text-transform: uppercase;
 }
-.crew-summary h3 {
+.tech-summary h3 {
   text-transform: uppercase;
 }
 
-nav .crew-menu {
+nav .tech-menu {
   display: flex;
   justify-content: center;
   column-gap: 2em;
   list-style: none;
 }
-nav .crew-menu .menu-item {
+nav .tech-menu .menu-item {
   aspect-ratio: 1;
   background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid #979797;
   border-radius: 100%;
   color: white;
   cursor: pointer;
   font-family: "Bellefair", sans-serif;
-  font-size: 1.8rem;
-  padding: 4rem;
+  font-size: clamp(2rem, 3vw, 3rem);
+  width: 2.5em;
   transition: 0.2s;
 }
-nav .crew-menu .menu-item:hover {
-  background-color: #979797;
+nav .tech-menu .menu-item:hover {
+  border: 1px solid white;
 }
-nav .crew-menu .menu-item.active {
+nav .tech-menu .menu-item.active {
   background-color: white;
+  color: initial;
 }
 
 @media screen and (min-width: 600px) {
@@ -153,30 +156,31 @@ nav .crew-menu .menu-item.active {
     background-repeat: no-repeat;
   }
   main {
-    grid-template-columns: minmax(5rem, 1fr) minmax(0, 80%) minmax(5rem, 1fr);
+    grid-template-columns: minmax(0, 80%);
     row-gap: 4em;
   }
-  main .crew-section {
+  main .tech-section {
     order: 1;
-    grid-column: 2;
+    grid-column: 1;
   }
-  main .crew-section nav {
+  main .tech-section nav {
     margin: 0rem;
     margin-top: 3rem;
     order: 2;
   }
-  main .about-crew {
+  main .about-tech {
     border-bottom: none;
-    grid-column: 2;
+    grid-column: 1;
+    grid-column: span 4;
   }
   div.container h2 {
     text-align: start;
   }
-  .crew-summary {
+  .tech-summary {
     padding-bottom: 2em;
     text-align: center;
   }
-  .crew-summary .p-text {
+  .tech-summary .p-text {
     max-width: 100%;
   }
 }
@@ -193,28 +197,28 @@ nav .crew-menu .menu-item.active {
     grid-template-columns: minmax(0%, 55%) minmax(0%, 45%);
     grid-row: 2;
   }
-  main .crew-section {
+  main .tech-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     grid-column: 1;
     row-gap: 4rem;
   }
-  main .about-crew {
+  main .about-tech {
     grid-column: 2;
-    justify-content: start;
   }
-  main .about-crew #crewImg {
+  main .about-tech #techImg {
     aspect-ratio: 7/5;
+    height: 100%;
   }
   nav {
     justify-self: start;
     align-self: start;
   }
-  .crew-summary h1, .crew-summary h3 {
+  .tech-summary h1, .tech-summary h3 {
     text-align: initial;
   }
-  .crew-summary .p-text {
+  .tech-summary .p-text {
     max-width: 70%;
     text-align: start;
   }
