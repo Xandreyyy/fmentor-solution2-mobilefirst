@@ -6,7 +6,7 @@ html{
 }
 
 body{
-    background-image: variables.$destinationbgMobile;
+    background-image: variables.$technologybgMobile;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -144,16 +144,16 @@ nav .tech-menu{
 
 @media screen and (min-width: 600px){
     body{
-        background-image: variables.$destinationbgTablet;
+        background-image: variables.$technologybgTablet;
         background-size: cover;
         background-repeat: no-repeat;
     }
     main{
-        grid-template-columns:minmax(0, 80%);
+        grid-template-columns: minmax(0, 80%);
         row-gap: 4em;
+        justify-content: center;
         .tech-section{
-            order: 1;
-            grid-column: 1;
+            order: 2;
             nav{
                 margin: 0rem;;
                 margin-top: 3rem;
@@ -162,8 +162,11 @@ nav .tech-menu{
         }
         .about-tech{
             border-bottom: none;
-            grid-column: 1;
             grid-column: span 4;
+            order: 1;
+            #techImg{
+                height: 100%;
+            }
         }
     }
     div.container h2{
@@ -180,7 +183,7 @@ nav .tech-menu{
 
 @media screen and (min-width: 992px) {
     body{
-        background-image: variables.$destinationbgDesktop;
+        background-image: variables.$technologybgDesktop;
         background-size: cover;
         background-repeat: no-repeat;
     }
@@ -189,26 +192,33 @@ nav .tech-menu{
     }
 
     main{
-        grid-template-columns: minmax(0%, 55%) minmax(0%, 45%);
+        grid-template-columns: minmax(8rem, 1fr) minmax(0%, 55%) minmax(0%, 45%);
         grid-row: 2;
         .tech-section{
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            grid-column: 1;
-            row-gap: 4rem;
-        }
-        .about-tech{
+            flex-direction: row-reverse;
+            align-items: center;
             grid-column: 2;
-            #techImg{
-                aspect-ratio: 7/5;
-                height: 100%;
+            order: initial;
+            column-gap: max(10%, 3rem);
+            nav{
+                margin: initial;
             }
         }
-    }
-    nav{
-        justify-self: start;
-        align-self: start;
+        .tech-menu{
+            flex-direction: column;
+            row-gap: 2rem;
+        }
+        .about-tech{
+            grid-column: 3;
+            justify-content: end;
+            align-items: center;
+            order: initial;
+            #techImg{
+                aspect-ratio: 7/5;
+                height: 85%;
+            }
+        }
     }
     .tech-summary{
         h1, h3{
