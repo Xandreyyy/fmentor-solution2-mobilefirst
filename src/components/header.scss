@@ -3,7 +3,7 @@
 
 nav{
     font-family: variables.$secondaryFF;
-    font-size: 1.6rem;
+    font-size: clamp(1.9rem, 1.8vw, 1.6rem);
     letter-spacing: 0.27rem;
     z-index: 2;
     &.offcanvas{
@@ -18,12 +18,6 @@ nav{
     &.disappear{
         animation: burgerClosed 0.5s backwards;
     }
-}
-
-.container{
-    margin: 0px auto;
-    max-width: 1440px;
-    width: 100%;
 }
 
 #iconsWrapper{
@@ -200,7 +194,7 @@ img[alt="Logo"], .burger-menu{
         order: 2;
     }
     #burgerList{
-        padding: 0px 16.5rem 0px 12.3rem;
+        padding: 0px max(9vw, 9rem) 0px max(8vw, 13rem);
         .nav-link{
             display: flex;
             column-gap: 12px;
