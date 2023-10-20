@@ -9,14 +9,8 @@ body{
     background-image: variables.$destinationbgMobile;
     background-size: cover;
     display: grid;
+    grid-template-rows: min-content 100vh;
     row-gap: 2rem;
-}
-
-.container{
-    margin: 0px auto;
-    max-width: 1440px;
-    padding: 0rem 2.4rem;
-    width: 100%;
 }
 
 .primary-title{
@@ -93,18 +87,13 @@ body{
     }
 }
 
-div.container{
-    display: grid;
-    row-gap: 5em;
-    h2{
-        text-align: center;
-        color: variables.$secondaryColor;
-    }
+div.container h2{
+    text-align: center;
+    color: variables.$secondaryColor;
 }
 
 main{
     display: grid;
-    text-align: center;
     #planetImg{
         max-width: 20rem;
         place-self: center;
@@ -152,9 +141,6 @@ main{
         background-image: variables.$destinationbgDesktop;
         background-size: cover;
         background-repeat: no-repeat;
-    }
-    div.container h2{
-        width: 40%;
     }
     .planets-menu{
         justify-content: initial;
