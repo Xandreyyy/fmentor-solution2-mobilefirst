@@ -18,16 +18,9 @@ body {
   background-image: url(../assets/home/background-home-mobile.jpg);
   background-size: cover;
   display: grid;
-  grid-template-rows: min-content 75vh;
+  grid-template-rows: min-content 100vh;
   row-gap: 2rem;
   overflow: hidden;
-}
-
-.container {
-  margin: 0px auto;
-  max-width: 1440px;
-  padding: 0rem 2.4rem;
-  width: 100%;
 }
 
 .inner-container .secondary-title {
@@ -47,18 +40,16 @@ body {
 .secondary-title {
   color: #D0D6F9;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 2.6rem);
   font-weight: normal;
   letter-spacing: 0.27em;
 }
 
 .p-text {
-  margin: 0px auto;
   color: #D0D6F9;
   font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(1.5rem, 2vw, 1.6rem);
-  line-height: 2.5rem;
-  max-width: 450px;
+  font-size: clamp(1.8rem, 2vw, 2rem);
+  line-height: 1.5em;
   width: 100%;
 }
 
@@ -68,20 +59,11 @@ main {
   text-align: center;
 }
 
-.inner-container {
-  display: grid;
-  place-items: center;
+.content-wrapper {
+  max-width: min-content;
 }
 
-#wrapper {
-  display: grid;
-  gap: 10rem;
-}
-
-.container-button {
-  align-self: end;
-}
-.container-button #exploreButton {
+#exploreButton {
   aspect-ratio: 1;
   background-color: white;
   border-radius: 100%;
@@ -89,18 +71,18 @@ main {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 3em;
+  padding: 3.5em;
   position: relative;
   z-index: 1;
 }
-.container-button #exploreButton #buttonTitle {
+#exploreButton #buttonTitle {
   color: #0B0D17;
   font-family: "Bellefair", sans-serif;
-  font-size: clamp(1.5rem, 2.7vw, 2.2rem);
+  font-size: clamp(1.5rem, 3vw, 3.5rem);
   font-weight: lighter;
   letter-spacing: 0.125em;
 }
-.container-button #exploreButton::before {
+#exploreButton::before {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: inherit;
   content: "";
@@ -111,7 +93,7 @@ main {
   width: 100%;
   z-index: -1;
 }
-.container-button #exploreButton:hover::before {
+#exploreButton:hover::before {
   opacity: 1;
   transform: scale(1.8);
 }
@@ -129,13 +111,21 @@ main {
     background-size: cover;
     background-repeat: no-repeat;
   }
-  #wrapper {
-    grid-template-columns: repeat(2, 50%);
+  main {
+    grid-template-columns: minmax(3rem, 1fr) repeat(2, 50%) minmax(3rem, 1fr);
+    grid-row: 2;
+    place-items: center;
   }
-  #wrapper .secondary-title {
+  main .inner-container {
+    grid-column: 2;
+  }
+  main .container-button {
+    grid-column: 3;
+  }
+  main .secondary-title {
     text-align: start;
   }
-  #wrapper .p-text {
+  main .p-text {
     text-align: justify;
     width: 100%;
   }
