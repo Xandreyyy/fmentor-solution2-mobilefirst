@@ -1,5 +1,5 @@
 const liElements = document.querySelectorAll(".planets-menu .menu-item")
-const moonItem = document.querySelectorAll(".planets-menu .menu-item")[0]
+const firstItem = document.querySelectorAll(".planets-menu .menu-item")[0]
 
 const planetImg = document.getElementById("planetImg")
 const planetTitle = document.getElementById("planetName")
@@ -10,7 +10,7 @@ const planetTravel = document.getElementById("travelTime")
 let activeElement, arrDestinations
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    activeElement = moonItem
+    activeElement = firstItem
     activeElement.classList.add("active")
     return activeElement
 })

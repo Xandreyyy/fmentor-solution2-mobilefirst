@@ -1,5 +1,5 @@
 const liElements = document.querySelectorAll(".crew-menu .menu-item")
-const commanderItem = document.querySelectorAll(".crew-menu .menu-item")[0]
+const firstItem = document.querySelectorAll(".crew-menu .menu-item")[0]
 
 const crewRole = document.getElementById("crewRole")
 const crewName = document.getElementById("crewName")
@@ -9,7 +9,7 @@ const crewBg = document.getElementById("crewImg")
 let activeElement, arrMembers
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    activeElement = commanderItem
+    activeElement = firstItem
     activeElement.classList.add("active")
     return activeElement
 })

@@ -27,16 +27,16 @@ document.addEventListener("DOMContentLoaded", () =>{
             header.classList.add("container")
             header.innerHTML = `
             <div id="iconsWrapper">
-                <a href="../index.html"><img src="../assets/shared/logo.svg" alt="Logo"/></a>
-                <img class="burger-menu" id="burgerMenu_toopen" src="../assets/shared/icon-hamburger.svg"/>
-                <img class="burger-menu" id="burgerMenu_toclose" src="../assets/shared/icon-close.svg"/>
+                <a href="../../index.html"><img src="../../assets/shared/logo.svg" alt="Logo"/></a>
+                <img class="burger-menu" id="burgerMenu_toopen" src="../../assets/shared/icon-hamburger.svg"/>
+                <img class="burger-menu" id="burgerMenu_toclose" src="../../assets/shared/icon-close.svg"/>
             </div>
             <nav>
                 <ul id="burgerList">
-                    <li><a class="nav-link" href="../index.html"><span class="nav-index">00</span> HOME</a></li>
-                    <li><a class="nav-link" href="../html/destination.html"><span class="nav-index">01</span> DESTINATION</a></li>
-                    <li><a class="nav-link" href="../html/crew.html"><span class="nav-index">02</span> CREW</a></li>
-                    <li><a class="nav-link" href="../html/technology.html"><span class="nav-index">03</span> TECHNOLOGY</a></li>
+                    <li><a class="nav-link" href="../../index.html"><span class="nav-index">00</span> HOME</a></li>
+                    <li><a class="nav-link" href="/html/destination.html"><span class="nav-index">01</span> DESTINATION</a></li>
+                    <li><a class="nav-link" href="/html/crew.html"><span class="nav-index">02</span> CREW</a></li>
+                    <li><a class="nav-link" href="/html/technology.html"><span class="nav-index">03</span> TECHNOLOGY</a></li>
                 </ul>
             </nav>
             `
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
         style(){
             const style = document.createElement('style')
-            style.innerText = `@import '../../build/headerStyles.css'`
+            style.innerText = `@import '../build/headerStyles.css'`
             return style
         }
 
