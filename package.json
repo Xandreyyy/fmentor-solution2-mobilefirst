@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:index": "sass src/index.scss build/style.css --watch",
+    "build:index": "sass src/index.scss build/indexStyle.css --watch",
     "build:hcomponent": "sass src/components/header.scss build/headerStyles.css --watch",
     "build:destination": "sass src/destination.scss build/destinationStyle.css --watch",
     "build:crew": "sass src/crew.scss build/crewStyle.css --watch",

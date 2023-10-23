@@ -10,6 +10,14 @@ h4, h5, h6 {
   padding: 0px;
 }
 
+@font-face {
+  font-family: bellefair;
+  src: url(../src/fonts/Bellefair-Regular.ttf);
+}
+@font-face {
+  font-family: barlow;
+  src: url(../src/fonts/BarlowCondensed-Regular.ttf);
+}
 :root {
   font-size: 62.5%;
 }
@@ -31,7 +39,7 @@ body {
 .primary-title {
   color: white;
   display: inline-block;
-  font-family: "Bellefair", sans-serif;
+  font-family: bellefair;
   font-size: clamp(7rem, 13vw, 12rem);
   font-weight: normal;
   padding: 0.2em 0rem;
@@ -39,15 +47,15 @@ body {
 
 .secondary-title {
   color: #D0D6F9;
-  font-family: "Barlow Condensed", sans-serif;
-  font-size: clamp(1.4rem, 2vw, 2.6rem);
+  font-family: bellefair;
+  font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: normal;
   letter-spacing: 0.27em;
 }
 
 .p-text {
   color: #D0D6F9;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: barlow;
   font-size: clamp(1.8rem, 2vw, 2rem);
   line-height: 1.5em;
   width: 100%;
@@ -66,6 +74,7 @@ main {
 #exploreButton {
   aspect-ratio: 1;
   background-color: white;
+  border: none;
   border-radius: 100%;
   cursor: pointer;
   display: inline-flex;
@@ -77,7 +86,7 @@ main {
 }
 #exploreButton #buttonTitle {
   color: #0B0D17;
-  font-family: "Bellefair", sans-serif;
+  font-family: barlow;
   font-size: clamp(1.5rem, 3vw, 3.5rem);
   font-weight: lighter;
   letter-spacing: 0.125em;
@@ -131,4 +140,4 @@ main {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=indexStyle.css.map */

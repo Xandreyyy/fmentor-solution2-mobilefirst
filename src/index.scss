@@ -22,7 +22,7 @@ body{
 .primary-title{
     color: variables.$secondaryColor;
     display: inline-block;
-    font-family: variables.$primaryFF;
+    font-family: bellefair;
     font-size: clamp(7rem, 13vw, 12rem);
     font-weight: normal;
     padding: 0.2em 0rem;
@@ -30,15 +30,15 @@ body{
 
 .secondary-title{
     color: variables.$primaryColor; 
-    font-family: variables.$secondaryFF;
-    font-size: clamp(1.4rem, 2vw, 2.6rem);
+    font-family: bellefair;
+    font-size: clamp(1.4rem, 2vw, 2rem);
     font-weight: normal;
     letter-spacing: 0.27em;
 }
 
 .p-text{
     color: variables.$primaryColor; 
-    font-family: variables.$secondaryFF;
+    font-family: barlow;
     font-size: clamp(1.8rem, 2vw, 2rem);
     line-height: 1.5em;
     width: 100%;
@@ -57,6 +57,7 @@ main{
 #exploreButton{
     aspect-ratio: 1;
     background-color: variables.$secondaryColor;
+    border: none;
     border-radius: 100%;
     cursor: pointer;
     display: inline-flex;
@@ -67,7 +68,7 @@ main{
     z-index: 1;
     #buttonTitle{
         color: #0B0D17;
-        font-family: variables.$primaryFF;
+        font-family: barlow;
         font-size: clamp(1.5rem, 3vw, 3.5rem);
         font-weight: lighter;
         letter-spacing: 0.125em;
