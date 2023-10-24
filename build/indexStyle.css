@@ -48,7 +48,7 @@ body {
 .secondary-title {
   color: #D0D6F9;
   font-family: bellefair;
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   font-weight: normal;
   letter-spacing: 0.27em;
 }
@@ -58,12 +58,11 @@ body {
   font-family: barlow;
   font-size: clamp(1.8rem, 2vw, 2rem);
   line-height: 1.5em;
-  width: 100%;
 }
 
 main {
   display: grid;
-  align-items: center;
+  place-items: center;
   text-align: center;
 }
 
@@ -86,7 +85,7 @@ main {
 }
 #exploreButton #buttonTitle {
   color: #0B0D17;
-  font-family: barlow;
+  font-family: bellefair;
   font-size: clamp(1.5rem, 3vw, 3.5rem);
   font-weight: lighter;
   letter-spacing: 0.125em;
@@ -123,7 +122,6 @@ main {
   main {
     grid-template-columns: minmax(3rem, 1fr) repeat(2, 50%) minmax(3rem, 1fr);
     grid-row: 2;
-    place-items: center;
   }
   main .inner-container {
     grid-column: 2;

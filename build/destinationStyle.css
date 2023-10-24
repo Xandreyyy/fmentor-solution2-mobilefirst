@@ -10,6 +10,14 @@ h4, h5, h6 {
   padding: 0px;
 }
 
+@font-face {
+  font-family: bellefair;
+  src: url(../src/fonts/Bellefair-Regular.ttf);
+}
+@font-face {
+  font-family: barlow;
+  src: url(../src/fonts/BarlowCondensed-Regular.ttf);
+}
 html {
   font-size: 62.5%;
 }
@@ -24,14 +32,14 @@ body {
 
 .primary-title {
   color: white;
-  font-family: "Bellefair", sans-serif;
+  font-family: bellefair;
   font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: normal;
 }
 
 .secondary-title {
   color: #D0D6F9;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: barlow;
   font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: normal;
   letter-spacing: 0.27em;
@@ -39,7 +47,7 @@ body {
 
 .index-text {
   color: #979797;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: barlow;
   font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: bold;
   letter-spacing: 0.27em;
@@ -51,9 +59,25 @@ body {
 
 .p-text {
   color: #D0D6F9;
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: barlow;
   font-size: clamp(1.5rem, 2vw, 1.6rem);
   line-height: 2.5rem;
+}
+
+div.container {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: min-content 1fr;
+}
+
+div.container h2 {
+  text-align: center;
+  grid-row: 1;
+  color: white;
+}
+
+main {
+  grid-row: 2;
 }
 
 .planet-info {
@@ -92,11 +116,6 @@ body {
 .planets-menu .menu-item.active {
   color: white;
   border-bottom: 2px solid white;
-}
-
-div.container h2 {
-  text-align: center;
-  color: white;
 }
 
 main {
@@ -148,11 +167,20 @@ main #planetImg {
     background-size: cover;
     background-repeat: no-repeat;
   }
+  div.container {
+    display: grid;
+    grid-template-columns: minmax(2em, 1fr) 1fr minmax(2em, 1fr);
+  }
+  div.container h2 {
+    grid-column: 2;
+    text-align: start;
+  }
   .planets-menu {
     justify-content: initial;
     padding: 0em 0em 2em 0em;
   }
   main {
+    grid-column: 2;
     grid-template-columns: minmax(2em, 1fr) minmax(0%, 56%) minmax(0%, 42%) minmax(2em, 1fr);
   }
   main .about-planet {
@@ -164,9 +192,6 @@ main #planetImg {
   }
   main .planet-section {
     grid-column: 3;
-  }
-  .planet-summary {
-    max-width: 86%;
   }
   .planet-summary h1 {
     text-align: initial;

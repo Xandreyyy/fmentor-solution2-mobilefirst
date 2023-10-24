@@ -15,14 +15,14 @@ body{
 
 .primary-title{
     color: variables.$secondaryColor;
-    font-family: variables.$primaryFF;
+    font-family: bellefair;
     font-size: clamp(1.4rem, 2vw, 2rem);
     font-weight: normal;
 }
 
 .secondary-title{
     color: variables.$primaryColor; 
-    font-family: variables.$secondaryFF;
+    font-family: barlow;
     font-size: clamp(1.4rem, 2vw, 2rem);
     font-weight: normal;
     letter-spacing: 0.27em;
@@ -30,7 +30,7 @@ body{
 
 .index-text{
     color: variables.$tertiaryColor;
-    font-family: variables.$secondaryFF;
+    font-family: barlow;
     font-size: clamp(1.4rem, 2vw, 2rem);
     font-weight: bold;
     letter-spacing: 0.27em;
@@ -42,11 +42,25 @@ body{
 
 .p-text{
     color: variables.$primaryColor; 
-    font-family: variables.$secondaryFF;
+    font-family: barlow;
     font-size: clamp(1.5rem, 2vw, 1.6rem);
     line-height: 2.5rem;
-    // max-width: 450px;
-    // width: 100%;
+}
+
+div.container{
+    display: grid;
+    justify-items: center;
+    grid-template-rows: min-content 1fr;
+}
+
+div.container h2{
+    text-align: center;
+    grid-row: 1;
+    color: variables.$secondaryColor;
+}
+
+main{
+    grid-row: 2;
 }
 
 .planet-info{
@@ -85,11 +99,6 @@ body{
             border-bottom: 2px solid white;
         }
     }
-}
-
-div.container h2{
-    text-align: center;
-    color: variables.$secondaryColor;
 }
 
 main{
@@ -142,11 +151,20 @@ main{
         background-size: cover;
         background-repeat: no-repeat;
     }
+    div.container{
+        display: grid;
+        grid-template-columns: minmax(2em, 1fr) 1fr minmax(2em, 1fr);
+    }
+    div.container h2{
+        grid-column: 2;
+        text-align: start;
+    }
     .planets-menu{
         justify-content: initial;
         padding: 0em 0em 2em 0em;
     }
     main{
+        grid-column: 2;
         //the third column isn't equal to the second because it's need to be smaller, so the <p> height is consistent
         grid-template-columns: minmax(2em, 1fr)  minmax(0%, 56%) minmax(0%, 42%) minmax(2em, 1fr);
         .about-planet{
@@ -161,7 +179,6 @@ main{
         }
     }
     .planet-summary{
-        max-width: 86%;
         h1{
             text-align: initial;
         }
