@@ -60,6 +60,7 @@ div.container h2{
 }
 
 main{
+    display: grid;
     grid-row: 2;
 }
 
@@ -101,13 +102,13 @@ main{
     }
 }
 
-main{
-    display: grid;
-    #planetImg{
-        max-width: 20rem;
-        place-self: center;
-    }
-}
+// main{
+//     display: grid;
+//     #planetImg{
+//         max-width: 20rem;
+//         place-self: center;
+//     }
+// }
 
 .planet-summary{
     border-bottom: 1px white solid;
@@ -152,30 +153,33 @@ main{
         background-repeat: no-repeat;
     }
     div.container{
-        display: grid;
-        grid-template-columns: minmax(2em, 1fr) 1fr minmax(2em, 1fr);
+        grid-template-columns: minmax(2em, 1fr) minmax(0%, 1fr) minmax(2em, 1fr);
+        grid-template-areas:
+        'null title null'
+        'null main null';
     }
     div.container h2{
-        grid-column: 2;
         text-align: start;
+        grid-area: title;
     }
     .planets-menu{
         justify-content: initial;
         padding: 0em 0em 2em 0em;
     }
     main{
-        grid-column: 2;
+        grid-area: main;
         //the third column isn't equal to the second because it's need to be smaller, so the <p> height is consistent
-        grid-template-columns: minmax(2em, 1fr)  minmax(0%, 56%) minmax(0%, 42%) minmax(2em, 1fr);
+        grid-template-columns: minmax(0%, 56%) minmax(0%, 42%);
+        grid-template-areas: 'planet info';
         .about-planet{
-            grid-column: 2;
+            grid-area: planet;
             align-self: center;
             #planetImg{
                 max-width: 32rem;
             }
         }
         .planet-section{
-            grid-column: 3;
+            grid-area: info;
         }
     }
     .planet-summary{

@@ -77,6 +77,7 @@ div.container h2 {
 }
 
 main {
+  display: grid;
   grid-row: 2;
 }
 
@@ -116,14 +117,6 @@ main {
 .planets-menu .menu-item.active {
   color: white;
   border-bottom: 2px solid white;
-}
-
-main {
-  display: grid;
-}
-main #planetImg {
-  max-width: 20rem;
-  place-self: center;
 }
 
 .planet-summary {
@@ -168,30 +161,31 @@ main #planetImg {
     background-repeat: no-repeat;
   }
   div.container {
-    display: grid;
-    grid-template-columns: minmax(2em, 1fr) 1fr minmax(2em, 1fr);
+    grid-template-columns: minmax(2em, 1fr) minmax(0%, 1fr) minmax(2em, 1fr);
+    grid-template-areas: "null title null" "null main null";
   }
   div.container h2 {
-    grid-column: 2;
     text-align: start;
+    grid-area: title;
   }
   .planets-menu {
     justify-content: initial;
     padding: 0em 0em 2em 0em;
   }
   main {
-    grid-column: 2;
-    grid-template-columns: minmax(2em, 1fr) minmax(0%, 56%) minmax(0%, 42%) minmax(2em, 1fr);
+    grid-area: main;
+    grid-template-columns: minmax(0%, 56%) minmax(0%, 42%);
+    grid-template-areas: "planet info";
   }
   main .about-planet {
-    grid-column: 2;
+    grid-area: planet;
     align-self: center;
   }
   main .about-planet #planetImg {
     max-width: 32rem;
   }
   main .planet-section {
-    grid-column: 3;
+    grid-area: info;
   }
   .planet-summary h1 {
     text-align: initial;
